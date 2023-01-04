@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "frutiger";
+    src: url("../font/Frutiger-65-Bold.otf") format("opentype");
+}
+
+* {
+    font-family: "frutiger";
+    font-size: 16px;
+}
+
+main {
+    padding: 0 10%;
+}
+
+.logo {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.nav-link {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 50%;
+}
+
+.discography-button {
+    padding: 5px;
+    text-align: center;
+}
+
+.discography-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.discography-element {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.discography-photo {
+    width: 20%;
+    margin-right: 10px;
+}
+
+.lives-button {
+    background-color: grey;
+}
+
+.lives-panel {
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    * {
+        font-size: 20px;
+    }
+
+    .logo {
+        margin: 20px 0;
+    }
+
+    .nav-link {
+        font-size: 24px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .avatar {
+        width: 20%;
+        margin-left: 40%;
+    }
+
+    .discography-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
