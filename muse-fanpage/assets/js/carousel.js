@@ -12,8 +12,7 @@ var clips = [
     ["Undisclosed Desires", "R8OOWcsFj0U"],
 ];
 
-for (let i = 0; i < clips.length; i++)
-{
+for (let i = 0; i < clips.length; i++) {
     let result = "";
     for (let j = 0; j < clips[i][0].length; j++)
     {

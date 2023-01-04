@@ -11,6 +11,8 @@
 
 .reset-margin {margin: 0;}
 
+.button {padding: 5px;}
+
 header {padding-top: 10px;}
 
 main {padding: 0 10%;}
@@ -19,7 +21,23 @@ main {padding: 0 10%;}
 
 .discography-grid {display: grid;}
 
+.see-more-button {
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.hidden {display: none;}
+
 footer {margin-top: 40px;}
+
+.up-arrow {
+    width: 5vw;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    mix-blend-mode: exclusion;
+    filter: invert(100%);
+}
 
 @media screen and (max-width: 575px) {
     *            {font-size: 12px;}

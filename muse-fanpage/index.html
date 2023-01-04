@@ -9,54 +9,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-    <link href="assets/css/layout.css" rel="stylesheet">
     <link href="assets/css/effect.css" rel="stylesheet">
-    <script src="assets/js/discography-panels.js"></script>
+    <link href="assets/css/layout.css" rel="stylesheet">
     <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/discography-panels.js"></script>
     <script src="assets/js/scroll-events.js"></script>
+    <script src="assets/js/see-more.js"></script>
 
     <title>Muse - FanPage</title>
 </head>
 
 <body class="bg-black" onload="switchToAlbums(); loadClip();">
-    <header class="container-fluid bg-white">
+    <header id="header" class="container-fluid bg-white">
         <div class="row justify-content-center">
             <div class="col-4">
-                <img class="full-sized" src="assets/img/logo.svg" alt="Logo Muse">
+                <img class="full-sized" src="assets/img/logo.svg" alt="Logo de Muse">
             </div>
         </div>
         <nav class="d-flex flex-row justify-content-around padded">
-            <a class="text-decoration-none text-medium text-black" href="#biography">BIOGRAPHIE</a>
-            <a class="text-decoration-none text-medium text-black" href="#discography">DISCOGRAPHIE</a>
-            <a class="text-decoration-none text-medium text-black" href="#clips">CLIPS</a>
-            <a class="text-decoration-none text-medium text-black" href="#networks">RESEAUX</a>
+            <a id="first-tabindex" class="text-decoration-none text-medium text-black" href="#biography" aria-label="Lien vers la section biographie" tabindex="1">BIOGRAPHIE</a>
+            <a class="text-decoration-none text-medium text-black" href="#discography" aria-label="Lien vers la section discography" tabindex="2">DISCOGRAPHIE</a>
+            <a class="text-decoration-none text-medium text-black" href="#clips" aria-label="Lien vers la section clips" tabindex="3">CLIPS</a>
+            <a class="text-decoration-none text-medium text-black" href="#networks" aria-label="Lien vers la section réseaux" tabindex="4">RESEAUX</a>
         </nav>
     </header>
 
     <main>
         <section>
-            <h1 id="biography" class="text-center text-big text-white">BIOGRAPHIE :</h1>
-            <img class="avatar" src="assets/img/avatar.jpg" alt="Photo Muse">
-            <p class="text-white">Muse est un groupe de rock britannique composé de Matthew Bellamy (chant, guitare, piano), de Christopher Wolstenholme (basse, harmonica, chant, choeurs), et de Dominic Howard (batteries, percussions). Il a été formé en 1992 mais n'apparaît sur scène qu'à partir de 1994. Ils ont sorti 9 albums et ont reçu de nombreux prix entre 2000 et 2022.</p>
+            <h1 id="biography" class="text-center text-big text-white" tabindex="10">BIOGRAPHIE :</h1>
+            <img class="avatar" src="assets/img/avatar.jpg" alt="Photo de Muse">
+            <p class="text-white" tabindex="11">Muse est un groupe de rock britannique composé de Matthew Bellamy (chant, guitare, piano), de Christopher Wolstenholme (basse, harmonica, chant, choeurs), et de Dominic Howard (batteries, percussions). Il a été formé en 1992 mais n'apparaît sur scène qu'à partir de 1994. Ils ont sorti 9 albums et ont reçu de nombreux prix entre 2000 et 2022.</p>
         </section>
 
         <section>
-            <h1 id="discography" class="text-center text-big text-white">DISCOGRAPHIE :</h1>
-            <div class="container-fluid">
+            <h1 id="discography" class="text-center text-big text-white" tabindex="20">DISCOGRAPHIE :</h1>
+            <div class="container-fluid bg-white">
                 <div class="row">
-                    <div id="albums-button" onclick="switchToAlbums();" class="col-6 cursor-pointer text-center padded">
+                    <div id="albums-button" onclick="switchToAlbums();" onkeypress="switchToAlbums();" class="col-6 cursor-pointer text-center padded" role="button" aria-label="Passer sur le panneau des albums" tabindex="21">
                         <span class="text-medium text-black">ALBUMS</span>
                     </div>
-                    <div id="lives-button" onclick="switchToLives();" class="col-6 cursor-pointer text-center padded">
+                    <div id="lives-button" onclick="switchToLives();" onkeypress="switchToLives();" class="col-6 cursor-pointer text-center padded" role="button" aria-label="Passer sur le panneau des lives" tabindex="22">
                         <span class="text-medium text-black">LIVES</span>
                     </div>
                 </div>
                 <div class="row">
-                    <div id="albums-panel" class="col-12 discography-grid bg-white">
+                    <div id="albums-panel" class="col-12 discography-grid">
                         <div class="container-fluid">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/showbiz.jpg" alt="Showbiz">
+                                    <img class="full-sized" src="assets/img/albums/showbiz.jpg" alt="Pochette de l'album 'Showbiz'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Showbiz (1999) 17/20</span>
@@ -66,92 +67,91 @@
                         <div class="container-fluid">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/origin-of-symmetry.jpg" alt="Origin of Symmetry">
+                                    <img class="full-sized" src="assets/img/albums/origin-of-symmetry.jpg" alt="Pochette de l'album 'Origin of Symmetry'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Origin of Symmetry (2001) 18/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/absolution.jpg" alt="Absolution">
+                                    <img class="full-sized" src="assets/img/albums/absolution.jpg" alt="Pochette de l'album 'Absolution'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Absolution (2003) 17/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/black-holes-and-revelations.jpg" alt="Black Holes and Revelations">
+                                    <img class="full-sized" src="assets/img/albums/black-holes-and-revelations.jpg" alt="Pochette de l'album 'Black Holes and Revelations'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Black Holes and Revelations (2006) 16/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/the-resistance.jpg" alt="The Resistance">
+                                    <img class="full-sized" src="assets/img/albums/the-resistance.jpg" alt="Pochette de l'album 'The Resistance'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">The Resistance (2009) 16/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/the-2nd-law.jpg" alt="The 2nd Law">
+                                    <img class="full-sized" src="assets/img/albums/the-2nd-law.jpg" alt="Pochette de l'album 'The 2nd Law'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">The 2nd Law (2012) 14/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/drones.jpg" alt="Drones">
+                                    <img class="full-sized" src="assets/img/albums/drones.jpg" alt="Pochette de l'album 'Drones'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Drones (2015) 16/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/simulation-theory.jpg" alt="Simulation Theory">
+                                    <img class="full-sized" src="assets/img/albums/simulation-theory.jpg" alt="Pochette de l'album 'Simulation Theory'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Simulation Theory (2018) 15/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/albums/will-of-the-people.jpg" alt="Will of the People">
+                                    <img class="full-sized" src="assets/img/albums/will-of-the-people.jpg" alt="Pochette de l'album 'Will of the People'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Will of the People (2022) 17/20</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="row">
-                    <div id="lives-panel" class="col-12 discography-grid bg-white">
+                    <div id="lives-panel" class="col-12 discography-grid">
                         <div class="container-fluid">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/lives/hullabaloo.jpg" alt="Hullabaloo">
+                                    <img class="full-sized" src="assets/img/lives/hullabaloo.jpg" alt="Visuel du live 'Hullabaloo">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Hullabaloo (2002) 16/20</span>
@@ -161,17 +161,17 @@
                         <div class="container-fluid">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/lives/haarp.jpg" alt="H.A.A.R.P.">
+                                    <img class="full-sized" src="assets/img/lives/haarp.jpg" alt="Visuel du live 'H.A.A.R.P.'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">H.A.A.R.P. - Live from Wembley (2008) 18/20</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid hidden">
                             <div class="row align-items-center padded">
                                 <div class="col-4">
-                                    <img class="full-sized" src="assets/img/lives/rome-olympic-stadium.jpg" alt="Live at Rome Olympic Stadium">
+                                    <img class="full-sized" src="assets/img/lives/rome-olympic-stadium.jpg" alt="Visuel du live au 'Rome Olympic Stadium'">
                                 </div>
                                 <div class="col-8">
                                     <span class="text-black">Live at Rome Olympic Stadium (2013) 16/20</span>
@@ -180,78 +180,85 @@
                         </div>
                     </div>
                 </div>
+                <div class="row justify-content-center">
+                    <span id="see-more" onclick="seeMore();" onkeypress="seeMore();" class="see-more-button button button-border text-medium cursor-pointer" role="button" aria-label="Button pour afficher plus d'éléments" tabindex="23">Voir plus</span>
+                </div>
             </div>
         </section>
 
         <section>
-            <h1 id="clips" class="text-center text-big text-white">CLIPS :</h1>
+            <h1 id="clips" class="text-center text-big text-white" tabindex="30">CLIPS :</h1>
             <div class="container-fluid">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-2 d-flex justify-content-end">
-                        <img onclick="previousClip();" class="clip-arrow cursor-pointer" src="assets/img/left-arrow.svg" alt="Précédent">
+                        <img onclick="previousClip();" onkeypress="previousClip();" class="clip-arrow cursor-pointer" src="assets/img/left-arrow.svg" alt="Précédent" role="button"  tabindex="32">
                     </div>
                     <div class="col-6">
-                        <a id="clip-link" class="text-decoration-none" href="#">
+                        <a id="clip-link" class="text-decoration-none" href="#" tabindex="31">
                             <img id="clip-image" class="full-sized" src="assets/img/clips/something-human.jpg" alt="Lien vers le clip de 'Something Human'">
                             <p class="reset-margin text-left text-small text-white">(lien vers Youtube)</p>
                             <p id="clip-name" class="text-center text-white">Something Human</p>
                         </a>
                     </div>
                     <div class="col-2 d-flex justify-content-start">
-                        <img onclick="nextClip();" class="clip-arrow cursor-pointer" src="assets/img/right-arrow.svg" alt="Suivant">
+                        <img onclick="nextClip();" onkeypress="nextClip();" class="clip-arrow cursor-pointer" src="assets/img/right-arrow.svg" alt="Suivant"  tabindex="33">
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center caption-container">
-                <img id="caption-0" onclick="selectClip(0);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-1" onclick="selectClip(1);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-2" onclick="selectClip(2);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-3" onclick="selectClip(3);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-4" onclick="selectClip(4);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-5" onclick="selectClip(5);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-6" onclick="selectClip(6);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-7" onclick="selectClip(7);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-8" onclick="selectClip(8);" class="cursor-pointer" src="assets/img/circle-grey.svg">
-                <img id="caption-9" onclick="selectClip(9);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-0" onclick="selectClip(0);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-1" onclick="selectClip(1);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-2" onclick="selectClip(2);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-3" onclick="selectClip(3);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-4" onclick="selectClip(4);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-5" onclick="selectClip(5);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-6" onclick="selectClip(6);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-7" onclick="selectClip(7);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-8" onclick="selectClip(8);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
+                <img id="caption-9" onclick="selectClip(9);" class="cursor-pointer" src="assets/img/circle-grey.svg" alt="" aria-hidden="true">
             </div>
         </section>
 
         <section>
-            <h1 id="networks" class="text-center text-big text-white">RESEAUX :</h1>
+            <h1 id="networks" class="text-center text-big text-white" tabindex="40">RESEAUX :</h1>
             <div class="row justify-content-around align-items-center">
                 <div class="col-2">
-                    <a href="http://www.muse.mu/index.php">
-                        <img class="network-icon" src="assets/img/networks/globe.svg" alt="Muse official site">
+                    <a href="http://www.muse.mu/index.php" tabindex="41">
+                        <img class="network-icon" src="assets/img/networks/globe.svg" alt="Lien vers le site officiel de Muse">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a href="https://www.facebook.com/muse">
-                        <img class="network-icon" src="assets/img/networks/facebook.svg" alt="Facebook">
+                    <a href="https://www.facebook.com/muse" tabindex="42">
+                        <img class="network-icon" src="assets/img/networks/facebook.svg" alt="Lien vers le Facebook de Muse">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a href="https://twitter.com/muse">
-                        <img class="network-icon" src="assets/img/networks/twitter.svg" alt="Twitter">
+                    <a href="https://twitter.com/muse" tabindex="43">
+                        <img class="network-icon" src="assets/img/networks/twitter.svg" alt="Lien vers le Twitter de Muse">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a href="https://youtube.com/user/muse">
-                        <img class="network-icon" src="assets/img/networks/youtube.svg" alt="Youtube">
+                    <a href="https://youtube.com/user/muse" tabindex="44">
+                        <img class="network-icon" src="assets/img/networks/youtube.svg" alt="Lien vers le Youtube de Muse">
                     </a>
                 </div>
                 <div class="col-2">
-                    <a href="https://myspace.com/muse">
-                        <img class="network-icon" src="assets/img/networks/myspace.svg" alt="Myspace">
+                    <a href="https://myspace.com/muse" tabindex="45">
+                        <img class="network-icon" src="assets/img/networks/myspace.svg" alt="Lien vers le Myspace de Muse">
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
+    <aside>
+        <img id="up-arrow" onclick="scrollToTop();" onkeypress="scrollToTop();" class="up-arrow" src="assets/img/up-arrow.svg" alt="Revenir au début de la page" role="button" tabindex="50">
+    </aside>
+
     <footer class="container-fluid bg-white padded">
         <div class="row justify-content-center">
             <div class="col-4">
-                <img class="full-sized" src="assets/img/logo.svg" alt="Logo Muse">
+                <img class="full-sized" src="assets/img/logo.svg" alt="Logo de Muse">
             </div>
         </div>
     </footer>
