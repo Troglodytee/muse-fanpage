@@ -1,24 +1,7 @@
-.bg-white {
-    background-color: white;
-}
+.bg-white {background-color: white;}
+.bg-black {background-color: black;}
 
-.bg-black {
-    background-color: black;
-}
+.text-white {color: white;}
+.text-black {color: black;}
 
-.text-white {
-    color: white;
-}
-
-.text-black {
-    color: black;
-}
-
-* {
-    transition: all ease-in-out 0.4s;
-}
-
-.discography-button {
-    background-color: white;
-    color: black;
-}
+* {transition: all ease-in-out 0.4s;}

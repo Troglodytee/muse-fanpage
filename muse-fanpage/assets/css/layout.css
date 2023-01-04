@@ -3,86 +3,138 @@
     src: url("../font/Frutiger-65-Bold.otf") format("opentype");
 }
 
-* {
-    font-family: "frutiger";
-    font-size: 16px;
-}
+* {font-family: "frutiger";}
 
-main {
-    padding: 0 10%;
-}
+.cursor-pointer {cursor: pointer;}
 
-.logo {
-    width: 100%;
-    margin: 10px 0;
-}
+.full-sized {width: 100%;}
 
-.nav-link {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 18px;
-    text-decoration: none;
-}
+.reset-margin {margin: 0;}
 
-.title {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+header {padding-top: 10px;}
 
-.avatar {
-    width: 30%;
-    margin-left: 35%;
-    border-radius: 50%;
-}
+main {padding: 0 10%;}
 
-.discography-button {
-    padding: 5px;
-    text-align: center;
-}
+.avatar {border-radius: 100%;}
 
-.discography-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+.discography-grid {display: grid;}
 
-.discography-element {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-}
+footer {margin-top: 40px;}
 
-.discography-photo {
-    width: 20%;
-    margin-right: 10px;
-}
+@media screen and (max-width: 575px) {
+    *            {font-size: 12px;}
+    .text-small  {font-size: 10px;}
+    .text-medium {font-size: 12px;}
+    .text-big    {font-size: 16px;}
 
-.lives-button {
-    background-color: grey;
-}
+    .padded {padding: 5px;}
 
-.lives-panel {
-    display: none;
-}
+    .discography-grid {grid-template-columns: 1fr;}
 
-@media screen and (min-width: 992px) {
-    * {
-        font-size: 20px;
+    h1 {
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 
-    .logo {
-        margin: 20px 0;
+    .avatar
+    {
+        width: 30%;
+        margin-left: 35%;
     }
 
-    .nav-link {
-        font-size: 24px;
+    .clip-arrow {
+        width: 100%;
     }
 
-    .title {
-        font-size: 32px;
-        margin-top: 40px;
+    .caption-container {gap: 2px;}
+    .caption-container img {width: 5px;}
+
+    .network-icon {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    *            {font-size: 14px;}
+    .text-small  {font-size: 12px;}
+    .text-medium {font-size: 18px;}
+    .text-big    {font-size: 22px;}
+
+    .padded {padding: 5px;}
+
+    .discography-grid {grid-template-columns: 1fr;}
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .avatar
+    {
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    .clip-arrow {
+        width: 100%;
+    }
+
+    .caption-container {gap: 5px;}
+    .caption-container img {width: 8px;}
+
+    .network-icon {
+        width: 87.5%;
+        margin-left: 6.25%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    *            {font-size: 16px;}
+    .text-small  {font-size: 14px;}
+    .text-medium {font-size: 24px;}
+    .text-big    {font-size: 28px;}
+
+    .padded {padding: 8px;}
+
+    .discography-grid {grid-template-columns: 1fr 1fr;}
+
+    h1 {
+        margin-top: 30px;
         margin-bottom: 20px;
+    }
+
+    .avatar
+    {
+        width: 25%;
+        margin-left: 37.5%;
+    }
+
+    .clip-arrow {
+        width: 75%;
+    }
+
+    .caption-container {gap: 8px;}
+    .caption-container img {width: 10px;}
+
+    .network-icon {
+        width: 75%;
+        margin-left: 12.5%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    *            {font-size: 20px;}
+    .text-small  {font-size: 16px;}
+    .text-medium {font-size: 28px;}
+    .text-big    {font-size: 32px;}
+
+    .padded {padding: 10px;}
+    
+    .discography-grid {grid-template-columns: 1fr 1fr;}
+
+    h1 {
+        margin-top: 40px;
+        margin-bottom: 30px;
     }
 
     .avatar {
@@ -90,7 +142,48 @@ main {
         margin-left: 40%;
     }
 
-    .discography-grid {
-        grid-template-columns: 1fr 1fr;
+    .caption-container {gap: 10px;}
+    .clip-arrow {
+        width: 75%;
+    }
+
+    .caption-container img {width: 15px;}
+
+    .network-icon {
+        width: 62.5%;
+        margin-left: 18.75%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    *            {font-size: 24px;}
+    .text-small  {font-size: 20px;}
+    .text-medium {font-size: 32px;}
+    .text-big    {font-size: 38px;}
+
+    .padded {padding: 10px;}
+
+    .discography-grid {grid-template-columns: 1fr 1fr;}
+
+    h1 {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .avatar {
+        width: 20%;
+        margin-left: 40%;
+    }
+
+    .clip-arrow {
+        width: 50%;
+    }
+
+    .caption-container {gap: 10px;}
+    .caption-container img {width: 20px;}
+
+    .network-icon {
+        width: 50%;
+        margin-left: 25%;
     }
 }

@@ -11,103 +11,249 @@
 
     <link href="assets/css/layout.css" rel="stylesheet">
     <link href="assets/css/effect.css" rel="stylesheet">
+    <script src="assets/js/discography-panels.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/scroll-events.js"></script>
 
     <title>Muse - FanPage</title>
 </head>
 
-<body class="bg-black">
+<body class="bg-black" onload="switchToAlbums(); loadClip();">
     <header class="container-fluid bg-white">
         <div class="row justify-content-center">
             <div class="col-4">
-                <img class="logo" src="assets/img/logo.svg" alt="Logo Muse">
+                <img class="full-sized" src="assets/img/logo.svg" alt="Logo Muse">
             </div>
         </div>
-        <nav class="row">
-            <div class="col-3">
-                <a class="nav-link text-black" href="#biography">BIOGRAPHIE</a>
-            </div>
-            <div class="col-3">
-                <a class="nav-link text-black" href="#discography">DISCOGRAPHIE</a>
-            </div>
-            <div class="col-3">
-                <a class="nav-link text-black">CLIPS</a>
-            </div>
-            <div class="col-3">
-                <a class="nav-link text-black">RESEAUX</a>
-            </div>
+        <nav class="d-flex flex-row justify-content-around padded">
+            <a class="text-decoration-none text-medium text-black" href="#biography">BIOGRAPHIE</a>
+            <a class="text-decoration-none text-medium text-black" href="#discography">DISCOGRAPHIE</a>
+            <a class="text-decoration-none text-medium text-black" href="#clips">CLIPS</a>
+            <a class="text-decoration-none text-medium text-black" href="#networks">RESEAUX</a>
         </nav>
     </header>
 
     <main>
-        <h1 id="biography" class="title text-white">BIOGRAPHIE :</h1>
-        <img class="avatar" src="assets/img/avatar.jpg" alt="Photo Muse">
-        <p class="text-white">Muse est un groupe de rock britannique composé de Matthew Bellamy (chant, guitare, piano), de Christopher Wolstenholme (basse, harmonica, chant, choeurs), et de Dominic Howard (batteries, percussions). Il a été formé en 1992 mais n'apparaît sur scène qu'à partir de 1994. Ils ont sorti 9 albums et ont reçu de nombreux prix entre 2000 et 2022.</p>
-        <h2 id="discography" class="title text-white">DISCOGRAPHIE :</h2>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6 discography-button albums-button">
-                    <span>ALBUMS</span>
-                </div>
-                <div class="col-6 discography-button lives-button">
-                    <span>LIVES</span>
-                </div>
-                <div class="col-12 discography-grid bg-white albums-panel">
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/showbiz.jpg" alt="Showbiz">
-                        <span class="text-black">Showbiz (1999) 17/20</span>
+        <section>
+            <h1 id="biography" class="text-center text-big text-white">BIOGRAPHIE :</h1>
+            <img class="avatar" src="assets/img/avatar.jpg" alt="Photo Muse">
+            <p class="text-white">Muse est un groupe de rock britannique composé de Matthew Bellamy (chant, guitare, piano), de Christopher Wolstenholme (basse, harmonica, chant, choeurs), et de Dominic Howard (batteries, percussions). Il a été formé en 1992 mais n'apparaît sur scène qu'à partir de 1994. Ils ont sorti 9 albums et ont reçu de nombreux prix entre 2000 et 2022.</p>
+        </section>
+
+        <section>
+            <h1 id="discography" class="text-center text-big text-white">DISCOGRAPHIE :</h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="albums-button" onclick="switchToAlbums();" class="col-6 cursor-pointer text-center padded">
+                        <span class="text-medium text-black">ALBUMS</span>
                     </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/origin-of-symmetry.jpg" alt="Origin of Symmetry">
-                        <span class="text-black">Origin of Symmetry (2001) 18/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/absolution.jpg" alt="Absolution">
-                        <span class="text-black">Absolution (2003) 17/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/black-holes-and-revelations.jpg" alt="Black Holes and Revelations">
-                        <span class="text-black">Black Holes and Revelations (2006) 16/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/the-resistance.jpg" alt="The Resistance">
-                        <span class="text-black">The Resistance (2009) 16/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/the-2nd-law.jpg" alt="The 2nd Law">
-                        <span class="text-black">The 2nd Law (2012) 14/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/drones.jpg" alt="Drones">
-                        <span class="text-black">Drones (2015) 16/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/simulation-theory.jpg" alt="Simulation Theory">
-                        <span class="text-black">Simulation Theory (2018) 15/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/albums/will-of-the-people.jpg" alt="Will of the People">
-                        <span class="text-black">Will of the People (2022) 17/20</span>
+                    <div id="lives-button" onclick="switchToLives();" class="col-6 cursor-pointer text-center padded">
+                        <span class="text-medium text-black">LIVES</span>
                     </div>
                 </div>
-                <div class="col-12 discography-grid bg-white lives-panel">
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/lives/hullabaloo.jpg" alt="Hullabaloo">
-                        <span class="text-black">Hullabaloo (2002) 16/20</span>
+                <div class="row">
+                    <div id="albums-panel" class="col-12 discography-grid bg-white">
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/showbiz.jpg" alt="Showbiz">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Showbiz (1999) 17/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/origin-of-symmetry.jpg" alt="Origin of Symmetry">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Origin of Symmetry (2001) 18/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/absolution.jpg" alt="Absolution">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Absolution (2003) 17/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/black-holes-and-revelations.jpg" alt="Black Holes and Revelations">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Black Holes and Revelations (2006) 16/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/the-resistance.jpg" alt="The Resistance">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">The Resistance (2009) 16/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/the-2nd-law.jpg" alt="The 2nd Law">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">The 2nd Law (2012) 14/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/drones.jpg" alt="Drones">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Drones (2015) 16/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/simulation-theory.jpg" alt="Simulation Theory">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Simulation Theory (2018) 15/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/albums/will-of-the-people.jpg" alt="Will of the People">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Will of the People (2022) 17/20</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/lives/haarp.jpg" alt="H.A.A.R.P.">
-                        <span class="text-black">H.A.A.R.P. - Live from Wembley (2008) 18/20</span>
-                    </div>
-                    <div class="discography-element">
-                        <img class="discography-photo" src="assets/img/lives/rome-olympic-stadium.jpg" alt="Live at Rome Olympic Stadium">
-                        <span class="text-black">Live at Rome Olympic Stadium (2013) 16/20</span>
+                </div>
+                <div class="row">
+                    <div id="lives-panel" class="col-12 discography-grid bg-white">
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/lives/hullabaloo.jpg" alt="Hullabaloo">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Hullabaloo (2002) 16/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/lives/haarp.jpg" alt="H.A.A.R.P.">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">H.A.A.R.P. - Live from Wembley (2008) 18/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row align-items-center padded">
+                                <div class="col-4">
+                                    <img class="full-sized" src="assets/img/lives/rome-olympic-stadium.jpg" alt="Live at Rome Olympic Stadium">
+                                </div>
+                                <div class="col-8">
+                                    <span class="text-black">Live at Rome Olympic Stadium (2013) 16/20</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h1 id="clips" class="text-center text-big text-white">CLIPS :</h1>
+            <div class="container-fluid">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-2 d-flex justify-content-end">
+                        <img onclick="previousClip();" class="clip-arrow cursor-pointer" src="assets/img/left-arrow.svg" alt="Précédent">
+                    </div>
+                    <div class="col-6">
+                        <a id="clip-link" class="text-decoration-none" href="#">
+                            <img id="clip-image" class="full-sized" src="assets/img/clips/something-human.jpg" alt="Lien vers le clip de 'Something Human'">
+                            <p class="reset-margin text-left text-small text-white">(lien vers Youtube)</p>
+                            <p id="clip-name" class="text-center text-white">Something Human</p>
+                        </a>
+                    </div>
+                    <div class="col-2 d-flex justify-content-start">
+                        <img onclick="nextClip();" class="clip-arrow cursor-pointer" src="assets/img/right-arrow.svg" alt="Suivant">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center caption-container">
+                <img id="caption-0" onclick="selectClip(0);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-1" onclick="selectClip(1);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-2" onclick="selectClip(2);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-3" onclick="selectClip(3);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-4" onclick="selectClip(4);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-5" onclick="selectClip(5);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-6" onclick="selectClip(6);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-7" onclick="selectClip(7);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-8" onclick="selectClip(8);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+                <img id="caption-9" onclick="selectClip(9);" class="cursor-pointer" src="assets/img/circle-grey.svg">
+            </div>
+        </section>
+
+        <section>
+            <h1 id="networks" class="text-center text-big text-white">RESEAUX :</h1>
+            <div class="row justify-content-around align-items-center">
+                <div class="col-2">
+                    <a href="http://www.muse.mu/index.php">
+                        <img class="network-icon" src="assets/img/networks/globe.svg" alt="Muse official site">
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://www.facebook.com/muse">
+                        <img class="network-icon" src="assets/img/networks/facebook.svg" alt="Facebook">
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://twitter.com/muse">
+                        <img class="network-icon" src="assets/img/networks/twitter.svg" alt="Twitter">
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://youtube.com/user/muse">
+                        <img class="network-icon" src="assets/img/networks/youtube.svg" alt="Youtube">
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://myspace.com/muse">
+                        <img class="network-icon" src="assets/img/networks/myspace.svg" alt="Myspace">
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="container-fluid bg-white padded">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <img class="full-sized" src="assets/img/logo.svg" alt="Logo Muse">
+            </div>
+        </div>
     </footer>
 </body>
 </html>
