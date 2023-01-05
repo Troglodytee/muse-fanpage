@@ -29,10 +29,10 @@ function loadClip() {
     image.alt = "Lien vers le clip de '"+clips[index][0]+"'";
     document.getElementById("clip-link").href = "https://www.youtube.com/watch?v="+clips[index][1];
     document.getElementById("clip-name").textContent = clips[index][0];
-    document.getElementById("caption-"+index).src = "assets/img/circle-white.svg";
+    document.getElementById("caption-"+index).src = "assets/img/player/circle-white.svg";
 }
 
-function deselectClip() {document.getElementById("caption-"+index).src = "assets/img/circle-grey.svg";}
+function deselectClip() {document.getElementById("caption-"+index).src = "assets/img/player/circle-grey.svg";}
 
 function previousClip() {
     deselectClip();

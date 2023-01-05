@@ -7,28 +7,7 @@
 
 .cursor-pointer {cursor: pointer;}
 
-.full-sized {width: 100%;}
-
-.reset-margin {margin: 0;}
-
-.button {padding: 5px;}
-
-header {padding-top: 10px;}
-
-main {padding: 0 10%;}
-
-.avatar {border-radius: 100%;}
-
 .discography-grid {display: grid;}
-
-.see-more-button {
-    margin-bottom: 10px;
-    width: fit-content;
-}
-
-.hidden {display: none;}
-
-footer {margin-top: 40px;}
 
 .up-arrow {
     width: 5vw;
@@ -39,169 +18,60 @@ footer {margin-top: 40px;}
     filter: invert(100%);
 }
 
-@media screen and (max-width: 575px) {
-    *            {font-size: 12px;}
-    .text-small  {font-size: 10px;}
-    .text-medium {font-size: 12px;}
-    .text-big    {font-size: 16px;}
+.scrollable
+{
+    overflow-y: scroll;
+    border: 2px solid white;
+}
 
-    .padded {padding: 5px;}
+.cross-button {
+    top: 0;
+    padding: 10px;
+    width: 50px;
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+@media screen and (max-width: 575px) {
+    main {padding: 0 5%;}
 
     .discography-grid {grid-template-columns: 1fr;}
 
-    h1 {
-        margin-top: 10px;
-        margin-bottom: 5px;
-    }
-
-    .avatar
-    {
-        width: 30%;
-        margin-left: 35%;
-    }
-
-    .clip-arrow {
-        width: 100%;
-    }
-
-    .caption-container {gap: 2px;}
+    .caption-container {gap: 5px;}
     .caption-container img {width: 5px;}
-
-    .network-icon {
-        width: 100%;
-    }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-    *            {font-size: 14px;}
-    .text-small  {font-size: 12px;}
-    .text-medium {font-size: 18px;}
-    .text-big    {font-size: 22px;}
-
-    .padded {padding: 5px;}
+    main {padding: 0 5%;}
 
     .discography-grid {grid-template-columns: 1fr;}
 
-    h1 {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .avatar
-    {
-        width: 30%;
-        margin-left: 35%;
-    }
-
-    .clip-arrow {
-        width: 100%;
-    }
-
-    .caption-container {gap: 5px;}
+    .caption-container {gap: 8px;}
     .caption-container img {width: 8px;}
-
-    .network-icon {
-        width: 87.5%;
-        margin-left: 6.25%;
-    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    *            {font-size: 16px;}
-    .text-small  {font-size: 14px;}
-    .text-medium {font-size: 24px;}
-    .text-big    {font-size: 28px;}
-
-    .padded {padding: 8px;}
+    main {padding: 0 10%;}
 
     .discography-grid {grid-template-columns: 1fr 1fr;}
 
-    h1 {
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-
-    .avatar
-    {
-        width: 25%;
-        margin-left: 37.5%;
-    }
-
-    .clip-arrow {
-        width: 75%;
-    }
-
-    .caption-container {gap: 8px;}
+    .caption-container {gap: 10px;}
     .caption-container img {width: 10px;}
-
-    .network-icon {
-        width: 75%;
-        margin-left: 12.5%;
-    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-    *            {font-size: 20px;}
-    .text-small  {font-size: 16px;}
-    .text-medium {font-size: 28px;}
-    .text-big    {font-size: 32px;}
+    main {padding: 0 10%;}
 
-    .padded {padding: 10px;}
-    
     .discography-grid {grid-template-columns: 1fr 1fr;}
 
-    h1 {
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-
-    .avatar {
-        width: 20%;
-        margin-left: 40%;
-    }
-
-    .caption-container {gap: 10px;}
-    .clip-arrow {
-        width: 75%;
-    }
-
+    .caption-container {gap: 15px;}
     .caption-container img {width: 15px;}
-
-    .network-icon {
-        width: 62.5%;
-        margin-left: 18.75%;
-    }
 }
 
 @media screen and (min-width: 1200px) {
-    *            {font-size: 24px;}
-    .text-small  {font-size: 20px;}
-    .text-medium {font-size: 32px;}
-    .text-big    {font-size: 38px;}
-
-    .padded {padding: 10px;}
+    main {padding: 0 10%;}
 
     .discography-grid {grid-template-columns: 1fr 1fr;}
 
-    h1 {
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
-
-    .avatar {
-        width: 20%;
-        margin-left: 40%;
-    }
-
-    .clip-arrow {
-        width: 50%;
-    }
-
-    .caption-container {gap: 10px;}
+    .caption-container {gap: 20px;}
     .caption-container img {width: 20px;}
-
-    .network-icon {
-        width: 50%;
-        margin-left: 25%;
-    }
 }
