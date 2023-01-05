@@ -12,9 +12,9 @@ var clips = [
     ["Undisclosed Desires", "R8OOWcsFj0U"],
 ];
 
-for (let i = 0; i < clips.length; i++) {
-    let result = "";
-    for (let j = 0; j < clips[i][0].length; j++)
+for (var i = 0; i < clips.length; i++) {
+    var result = "";
+    for (var j = 0; j < clips[i][0].length; j++)
     {
         if (clips[i][0][j] == ' ') {result += '-';}
         else if (65 <= clips[i][0].charCodeAt(j) && clips[i][0].charCodeAt(j) <= 90) {result += String.fromCharCode(clips[i][0].charCodeAt(j)+32);}
@@ -24,15 +24,15 @@ for (let i = 0; i < clips.length; i++) {
 }
 
 function loadClip() {
-    let image = document.getElementById("clip-image");
+    var image = document.getElementById("clip-image");
     image.src = "assets/img/clips/"+clips[index][2]+".jpg";
     image.alt = "Lien vers le clip de '"+clips[index][0]+"'";
     document.getElementById("clip-link").href = "https://www.youtube.com/watch?v="+clips[index][1];
     document.getElementById("clip-name").textContent = clips[index][0];
-    document.getElementById("caption-"+index).src = "assets/img/player/circle-white.svg";
+    document.getElementById("caption-"+index).classList.add("button-active");
 }
 
-function deselectClip() {document.getElementById("caption-"+index).src = "assets/img/player/circle-grey.svg";}
+function deselectClip() {document.getElementById("caption-"+index).classList.remove("button-active");}
 
 function previousClip() {
     deselectClip();

@@ -6,17 +6,17 @@ var titles = [
 ];
 
 window.addEventListener('scroll', function() {
-    if (document.getElementById("header").getBoundingClientRect().top == 0) {document.getElementById("up-arrow").style.display = "none";}
-    else {document.getElementById("up-arrow").style.display = "block";}
-    let found = 0;
-    for (let i = 0; i < titles.length; i++) {
-        let element = document.getElementById(titles[i]);
-        let position = element.getBoundingClientRect();
+    if (document.getElementById("header").getBoundingClientRect().top == 0) {document.getElementById("up-arrow").classList.add("d-none");}
+    else {document.getElementById("up-arrow").classList.remove("d-none");}
+    var found = 0;
+    for (var i = 0; i < titles.length; i++) {
+        var element = document.getElementById(titles[i]);
+        var position = element.getBoundingClientRect();
         if (!found && position.top >= 0 && position.bottom <= this.window.innerHeight) {
-            element.style.textDecoration = "underline";
+            element.classList.add("text-decoration-underline");
             found = 1;
         }
-        else {element.style.textDecoration = "none";}
+        else {element.classList.remove("text-decoration-underline");}
     }
 });
 
