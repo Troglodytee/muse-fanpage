@@ -27,6 +27,9 @@ function loadClip() {
     var image = document.getElementById("clip-image");
     image.src = "assets/img/clips/"+clips[index][2]+".jpg";
     image.alt = "Lien vers le clip de '"+clips[index][0]+"'";
+    // image.style.backgroundImage = "url("+"'assets/img/clips/"+clips[index][2]+".jpg')";
+    // image.style.backgroundRepeat = "no-repeat";
+    // image.style.backgroundSize = "cover";
     document.getElementById("clip-link").href = "https://www.youtube.com/watch?v="+clips[index][1];
     document.getElementById("clip-name").textContent = clips[index][0];
     document.getElementById("caption-"+index).classList.add("button-active");
@@ -39,6 +42,7 @@ function previousClip() {
     index--;
     if (index < 0) {index = clips.length-1;}
     loadClip();
+    document.getElementById("clip-link").focus();
 }
 
 function nextClip() {
@@ -46,10 +50,12 @@ function nextClip() {
     index++;
     if (index >= clips.length) {index = 0;}
     loadClip();
+    document.getElementById("clip-link").focus();
 }
 
 function selectClip(new_index) {
     deselectClip();
     index = new_index;
     loadClip();
+    document.getElementById("clip-link").focus();
 }

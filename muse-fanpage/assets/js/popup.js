@@ -1,11 +1,27 @@
-function showPrivacyPolicy() {document.getElementById("privacy-policy").classList.remove("d-none");}
+function closeFooterPopup() {
+    document.getElementById("footer-popup").classList.add("d-none");
+    document.getElementById("privacy-policy").classList.add("d-none");
+    document.getElementById("legal-notice").classList.add("d-none");
+    document.getElementById("accessibility-notice").classList.add("d-none");
+}
 
-function closePrivacyPolicy() {document.getElementById("privacy-policy").classList.add("d-none");}
+function showFooterPopup()
+{
+    document.getElementById("footer-popup").classList.remove("d-none");
+    document.getElementById("close-footer-popup").focus();
+}
 
-function showLegalNotice() {document.getElementById("legal-notice").classList.remove("d-none");}
+function showPrivacyPolicy() {
+    document.getElementById("privacy-policy").classList.remove("d-none");
+    showFooterPopup();
+}
 
-function closeLegalNotice() {document.getElementById("legal-notice").classList.add("d-none");}
+function showLegalNotice() {
+    document.getElementById("legal-notice").classList.remove("d-none");
+    showFooterPopup();
+}
 
-function showAccessibilityNotice() {document.getElementById("accessibility-notice").classList.remove("d-none");}
-
-function closeAccessibilityNotice() {document.getElementById("accessibility-notice").classList.add("d-none");}
+function showAccessibilityNotice() {
+    document.getElementById("accessibility-notice").classList.remove("d-none");
+    showFooterPopup();
+}

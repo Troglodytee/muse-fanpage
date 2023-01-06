@@ -22,5 +22,7 @@ window.addEventListener('scroll', function() {
 
 function scrollToTop() {
     scroll({top: 0, left: 0, behavior: 'smooth'});
-    document.getElementById("first-tabindex").focus({preventScroll: "false"});
+    document.getElementById("jump-link").focus({preventScroll: "false"});
 }
+
+function focusJumpLink() {document.getElementById("jump-link").focus();}
