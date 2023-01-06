@@ -18,6 +18,13 @@ h1, h2, h3, h4, h5, h6 {font-family: "frutiger-bold";}
 
 .biography-arrow {width: 15px;}
 
+.player-icon {
+    position: absolute;
+    width: 10%;
+    /* top: -50%;
+    left: 50%; */
+}
+
 .up-arrow {
     width: 5vw;
     position: fixed;
